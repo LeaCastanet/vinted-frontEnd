@@ -1,18 +1,191 @@
 body {
   background-color: white;
+  width: 100vw;
   margin: 0 auto;
-}
-
-.container {
-  width: 1280px;
-  padding-right: 20px;
-  padding-left: 20px;
 }
 
 .header {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 1280px;
   height: 52px;
-  background-color: aquamarine;
+  padding: 0px 50px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.imgHeader {
+  height: 45px;
+}
+
+input {
+  width: 700px;
+  height: 30px;
+  background-color: rgb(234, 234, 234);
+  border: none;
+  border-radius: 5px;
+  margin-right: 50px;
+}
+
+.buttonWhite {
+  border: #2aaeb7 solid 1px;
+  color: #2aaeb7;
+  border-radius: 5px;
+  background-color: white;
+  height: 27px;
+  width: 100px;
+}
+
+.buttonBlue {
+  background-color: #2aaeb7;
+  border: #2aaeb7 solid 1px;
+  border-radius: 5px;
+  color: white;
+  height: 27px;
+  margin-left: 50px;
+}
+
+.homeHeader {
+  height: 500px;
+  width: 1280px;
+}
+
+.homeHeader img {
+  width: 100vw;
+  height: 500px;
+  object-fit: cover;
+  position: absolute;
+}
+
+.containerBlock {
+  position: relative;
+  padding: 7% 2%;
+}
+
+.blockSurImg {
+  background-color: white;
+  max-width: 384px;
+  border-radius: 5px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.blockSurImg .buttonBlue {
+  height: 50px;
+  margin: 0;
+}
+
+.blockSurImg p {
+  font-size: 3.4rem;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.homeOffers {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 1280px;
+  margin-top: 30px;
+}
+
+.homeOffer {
+  margin-bottom: 40px;
+  width: calc(100% / 5);
+  margin-inline: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeOffer img {
+  height: 300px;
+  width: 200px;
+  object-fit: cover;
+}
+
+.avatarEtUsername {
+  display: flex;
+  color: #c9c9c9;
+}
+
+.avatar {
+  margin-right: 10px;
+}
+
+.offerBody {
+  background-color: #f2f2f2;
+  height: 100vh;
+}
+
+.offerInfo {
+  display: flex;
+  margin: 0 auto;
+  width: 1280px;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.infoOffer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  padding: 40px;
+  height: 500px;
+  width: 400px;
+}
+
+.offerImg {
+  height: 100%;
+  width: 400px;
+}
+
+.price {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.containerOfferDescription {
+  padding-bottom: 50px;
+  border-bottom: solid 1px rgb(228, 228, 228);
+}
+
+.offerDescription {
+  display: flex;
+  justify-content: space-between;
+  line-height: 30px;
+}
+
+.productName {
+  margin-top: 40px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.productDescription {
+  line-height: 30px;
+}
+
+.offerAvatarUsername {
+  display: flex;
+}
+
+.buttonAcheter {
+  margin-top: 50px;
+  background-color: #2aaeb7;
+  border: #2aaeb7 solid 1px;
+  border-radius: 5px;
+  color: white;
+  height: 35px;
+  width: 100%;
+}
+
+.containerButtonAcheter {
+  display: flex;
+  justify-content: center;
 }

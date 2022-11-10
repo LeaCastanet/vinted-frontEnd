@@ -7,9 +7,9 @@ const HomeOffers = ({ data }) => {
         const id = offer._id;
         // console.log(offer.owner.account.avatar.url);
         return (
-          <>
-            <div className="ImgEtUsername">
-              <div>avatar</div>
+          <div className="homeOffer">
+            <div className="avatarEtUsername">
+              <div className="avatar">avatar</div>
               {/* <img>
               {offer.owner.account.avatar ? offer.owner.account.avatar.url : ""}
             </img> */}
@@ -19,7 +19,7 @@ const HomeOffers = ({ data }) => {
             <Link to={`/offer/${id}`}>
               <img key={index} src={offer.product_image.url}></img>
             </Link>
-          </>
+          </div>
         );
       })}
     </div>
