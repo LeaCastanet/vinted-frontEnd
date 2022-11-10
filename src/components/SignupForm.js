@@ -15,9 +15,11 @@ const SignupForm = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div>
-      <p>S'inscrire</p>
+    <div className="containerSignup">
+      <p className="textSignupLogin">S'inscrire</p>
+
       <form
+        className="containerForm"
         onSubmit={(event) => {
           event.preventDefault();
           const data = {
@@ -41,7 +43,8 @@ const SignupForm = ({
         }}
       >
         <input
-          placeholder="user name"
+          className="inputSignupLogin"
+          placeholder="User name"
           type="text"
           value={userName}
           onChange={(event) => {
@@ -49,7 +52,8 @@ const SignupForm = ({
           }}
         ></input>
         <input
-          placeholder="email"
+          className="inputSignupLogin"
+          placeholder="Email"
           type="text"
           value={email}
           onChange={(event) => {
@@ -57,17 +61,25 @@ const SignupForm = ({
           }}
         ></input>
         <input
-          placeholder="password"
+          className="inputSignupLogin"
+          placeholder="Password"
           type="password"
           value={password}
           onChange={(event) => {
             setPassword(event.target.value);
           }}
         ></input>
-        <input type="submit" value="S'incrire"></input>
+        <input
+          className="buttonSignupLogin"
+          type="submit"
+          value="S'incrire"
+        ></input>
       </form>
+
       <Link to="/signup">
-        <p>Tu as déjà un compte? Connecte-toi!</p>
+        <p className="bottomTextSignupLogin">
+          Tu as déjà un compte? Connecte-toi!
+        </p>
       </Link>
     </div>
   );

@@ -11,11 +11,9 @@ const HomeOffers = ({ data }) => {
             <div className="avatarEtUsername">
               <p className="avatar">avatar</p>
 
-              {/* {offer.owner.account.avatar ? (
+              {/* {offer.owner ? (
                 <img src={offer.owner.account.avatar.url}></img>
-              ) : (
-                ""
-              )} */}
+              ) : ""} */}
 
               <div>{offer.owner ? offer.owner.account.username : ""}</div>
             </div>

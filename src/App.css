@@ -2,6 +2,7 @@ body {
   background-color: white;
   width: 100vw;
   margin: 0 auto;
+  font-family: "Roboto", sans-serif;
 }
 
 .header {
@@ -116,13 +117,14 @@ body {
 
 .homeOffer img {
   height: 300px;
-  width: 200px;
+  width: 250px;
   object-fit: cover;
 }
 
 .avatarEtUsername {
   display: flex;
   color: #c9c9c9;
+  margin-bottom: 7px;
 }
 
 .imgAvatar {
@@ -159,9 +161,29 @@ body {
   width: 400px;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.containerOfferImg {
+  display: flex;
+  flex: wrap;
+  overflow: hidden;
+  overflow-x: scroll;
+  height: 580px;
+  width: 400px;
+}
+
+.offerImgs {
+  display: flex;
+  flex: wrap;
+}
+
 .offerImg {
   height: 100%;
   width: 400px;
+  object-fit: cover;
 }
 
 .price {
@@ -172,6 +194,7 @@ body {
 .containerOfferDescription {
   padding-bottom: 50px;
   border-bottom: solid 1px rgb(228, 228, 228);
+  flex: 1;
 }
 
 .offerDescription {
@@ -211,4 +234,58 @@ body {
 .containerButtonAcheter {
   display: flex;
   justify-content: center;
+}
+
+.containerSignup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.containerForm {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.textSignupLogin {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.inputSignupLogin {
+  background-color: white;
+  border: none;
+  border-bottom: solid rgb(255, 113, 113) 1px;
+  height: 50px;
+}
+
+.buttonSignupLogin {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #2aaeb7;
+  border: #2aaeb7 solid 1px;
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  cursor: pointer;
+}
+
+.bottomTextSignupLogin {
+  color: #2aaeb7;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
 }

@@ -1,16 +1,20 @@
-import { Link } from "react-router-dom";
-
 const OfferInfo = ({ data, setData, id }) => {
   return (
     <div className="offerBody">
       <div className="offerInfo">
-        {data.product_pictures.map((images) => {
-          return (
-            <div className="container.OfferImg">
-              <img className="offerImg" key={images.id} src={images.url}></img>
-            </div>
-          );
-        })}
+        <div className="containerOfferImg">
+          {data.product_pictures.map((images) => {
+            return (
+              <div className="offerImgs">
+                <img
+                  className="offerImg"
+                  key={images.id}
+                  src={images.url}
+                ></img>
+              </div>
+            );
+          })}
+        </div>
 
         <div className="infoOffer">
           <p className="price">{data.product_price} €</p>
