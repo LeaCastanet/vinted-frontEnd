@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import HomeHeader from "../components/HomeHeader";
@@ -25,8 +24,6 @@ const Home = () => {
     <div className="container">
       <HomeHeader />
       <HomeOffers data={data} setData={setData} />
-      <p>Je suis la page home</p>
-      <Link to="/offer">Aller sur la page de l'offre</Link>
     </div>
   );
 };

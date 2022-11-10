@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const SignupForm = ({
   userName,
@@ -17,18 +18,21 @@ const SignupForm = ({
     <div>
       <p>S'inscrire</p>
       <form
-        onSubmit={async (event) => {
+        onSubmit={(event) => {
           event.preventDefault();
           const data = {
-            userName: { userName },
-            email: { email },
-            password: { password },
+            username: userName,
+            email: email,
+            password: password,
           };
-          const response = await axios.post(
-            `https://lereacteur-vinted-api.herokuapp.com/user/signup`,
-            data
-          );
-          console.log(response.data);
+          const fetchData = async () => {
+            const response = await axios.post(
+              `https://lereacteur-vinted-api.herokuapp.com/user/signup`,
+              data
+            );
+            console.log(response.data);
+          };
+          fetchData();
 
           //   const token = "1234567890";
           handleToken(token);
@@ -62,6 +66,9 @@ const SignupForm = ({
         ></input>
         <input type="submit" value="S'incrire"></input>
       </form>
+      <Link to="/signup">
+        <p>Tu as déjà un compte? Connecte-toi!</p>
+      </Link>
     </div>
   );
 };
