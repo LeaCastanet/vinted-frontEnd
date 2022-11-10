@@ -37,6 +37,16 @@ body {
   cursor: pointer;
 }
 
+.buttonDeconexion {
+  border: rgb(84, 0, 84) solid 1px;
+  color: rgb(84, 0, 84);
+  border-radius: 5px;
+  background-color: white;
+  height: 27px;
+  width: 100px;
+  cursor: pointer;
+}
+
 .buttonBlue {
   background-color: #2aaeb7;
   border: #2aaeb7 solid 1px;
