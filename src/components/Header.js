@@ -8,9 +8,15 @@ const Header = () => {
         <img className="imgHeader" src={Vinted_logo}></img>
       </Link>
 
-      <input></input>
-      <button className="buttonWhite">S'incrire</button>
-      <button className="buttonWhite">Se connecter</button>
+      <input className="inputHeader"></input>
+      <Link to="/signup">
+        <button className="buttonWhite">S'incrire</button>
+      </Link>
+
+      <Link to="/login">
+        <button className="buttonWhite">Se connecter</button>
+      </Link>
+
       <button className="buttonBlue">Vends tes articles</button>
     </div>
   );

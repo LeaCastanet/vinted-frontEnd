@@ -18,7 +18,7 @@ body {
   height: 45px;
 }
 
-input {
+.inputHeader {
   width: 700px;
   height: 30px;
   background-color: rgb(234, 234, 234);
@@ -34,6 +34,7 @@ input {
   background-color: white;
   height: 27px;
   width: 100px;
+  cursor: pointer;
 }
 
 .buttonBlue {
@@ -43,6 +44,7 @@ input {
   color: white;
   height: 27px;
   margin-left: 50px;
+  cursor: pointer;
 }
 
 .homeHeader {
@@ -113,6 +115,13 @@ input {
   color: #c9c9c9;
 }
 
+.imgAvatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
 .avatar {
   margin-right: 10px;
 }
@@ -169,10 +178,14 @@ input {
 
 .productDescription {
   line-height: 30px;
+  color: #c9c9c9;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .offerAvatarUsername {
   display: flex;
+  align-items: center;
 }
 
 .buttonAcheter {

@@ -9,10 +9,14 @@ const HomeOffers = ({ data }) => {
         return (
           <div className="homeOffer">
             <div className="avatarEtUsername">
-              <div className="avatar">avatar</div>
-              {/* <img>
-              {offer.owner.account.avatar ? offer.owner.account.avatar.url : ""}
-            </img> */}
+              <p className="avatar">avatar</p>
+
+              {/* {offer.owner.account.avatar ? (
+                <img src={offer.owner.account.avatar.url}></img>
+              ) : (
+                ""
+              )} */}
+
               <div>{offer.owner ? offer.owner.account.username : ""}</div>
             </div>
 

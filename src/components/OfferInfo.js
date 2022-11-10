@@ -61,12 +61,15 @@ const OfferInfo = ({ data, setData, id }) => {
             <p className="productName">{data.product_name}</p>
             <p className="productDescription">{data.product_description}</p>
 
-            <div className="offerAvatarUsername">
+            <div>
               {data.owner ? (
-                <>
-                  <p className="avatar">avatar</p>{" "}
+                <div className="offerAvatarUsername">
+                  <img
+                    className="imgAvatar"
+                    src={data.owner.account.avatar.secure_url}
+                  ></img>
                   <p>{data.owner.account.username}</p>
-                </>
+                </div>
               ) : null}
             </div>
           </div>
