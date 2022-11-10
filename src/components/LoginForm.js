@@ -29,7 +29,7 @@ const LoginForm = ({
 
           //   const token = "1234567890";
           handleToken(token);
-          // À la fin de cete procédure je suis redirigé vers Home
+
           navigate("/");
         }}
       >

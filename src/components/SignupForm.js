@@ -25,7 +25,8 @@ const SignupForm = ({
             password: { password },
           };
           const response = await axios.post(
-            `https://lereacteur-vinted-api.herokuapp.com/user/signup`
+            `https://lereacteur-vinted-api.herokuapp.com/user/signup`,
+            data
           );
           console.log(response.data);
 
