@@ -14,6 +14,10 @@ const App = () => {
   // - Je je trouve un cookie token, ce cookie
   // - Sinon, nulll
   const [token, setToken] = useState(Cookies.get("token") || null);
+  const [textSearch, setTextSearch] = useState("");
+  const [priceMin, setPriceMin] = useState("");
+  const [priceMax, setPriceMax] = useState("");
+  const [orderBy, setOrderBy] = useState("price-asc");
 
   // je stoke le token dans le state et dans les cookies ou supprimer le token dans le state et dans les cookies.
   const handleToken = (token) => {
@@ -28,9 +32,34 @@ const App = () => {
 
   return (
     <Router>
-      <Header token={token} handleToken={handleToken} />
+      <Header
+        token={token}
+        handleToken={handleToken}
+        textSearch={textSearch}
+        setTextSearch={setTextSearch}
+        priceMin={priceMin}
+        setPriceMin={setPriceMin}
+        priceMax={priceMax}
+        setPriceMax={setPriceMax}
+        orderBy={orderBy}
+        setOrderBy={setOrderBy}
+      />
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route
+          path="/"
+          element={
+            <Home
+              textSearch={textSearch}
+              setTextSearch={setTextSearch}
+              priceMin={priceMin}
+              setPriceMin={setPriceMin}
+              priceMax={priceMax}
+              setPriceMax={setPriceMax}
+              orderBy={orderBy}
+              setOrderBy={setOrderBy}
+            />
+          }
+        ></Route>
         <Route path="/offer/:id" element={<Offer />}></Route>
         <Route
           path="/signup"
