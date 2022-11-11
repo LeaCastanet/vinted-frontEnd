@@ -122,16 +122,19 @@ body {
   width: calc(100% / 5);
   margin-inline: 20px;
   box-sizing: border-box;
-  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .homeOffer img {
   height: 300px;
   width: 250px;
   object-fit: cover;
+}
+
+.infoSousImgHome {
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .avatarEtUsername {

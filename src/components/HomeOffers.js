@@ -23,6 +23,31 @@ const HomeOffers = ({ data }) => {
             <Link to={`/offer/${id}`}>
               <img key={index} src={offer.product_image.url}></img>
             </Link>
+            <div>
+              <p className="infoSousImgHome">{offer.product_price} €</p>
+              {offer.product_details.map((detail, index) => {
+                if (detail.TAILLE) {
+                  return (
+                    <p className="infoSousImgHome" key={index}>
+                      {detail.TAILLE}
+                    </p>
+                  );
+                } else {
+                  return null;
+                }
+              })}
+              {offer.product_details.map((detail, index) => {
+                if (detail.MARQUE) {
+                  return (
+                    <p className="infoSousImgHome" key={index}>
+                      {detail.MARQUE}
+                    </p>
+                  );
+                } else {
+                  return null;
+                }
+              })}
+            </div>
           </div>
         );
       })}
