@@ -30,8 +30,8 @@ const SignupForm = ({
             email: email,
             password: password,
           };
-          try {
-            const fetchData = async () => {
+          const fetchData = async () => {
+            try {
               const response = await axios.post(
                 `https://lereacteur-vinted-api.herokuapp.com/user/signup`,
                 data
@@ -42,17 +42,16 @@ const SignupForm = ({
                 handleToken(token);
                 navigate("/");
               }
-            };
-
-            fetchData();
-          } catch (error) {
-            if (error.response?.status === 409) {
-              setErrorMessage("Cet email est déja utilisé");
+            } catch (error) {
+              if (error.response?.status === 409) {
+                setErrorMessage("Cet email est déja utilisé");
+              }
+              if (error.response?.data.message === "Missing parameters") {
+                setErrorMessage("Vous devez remplir tous les champs");
+              }
             }
-            if (error.response?.data.message === "Missing parameters") {
-              setErrorMessage("Vous devez remplir tous les champs");
-            }
-          }
+          };
+          fetchData();
         }}
       >
         <input
@@ -82,7 +81,7 @@ const SignupForm = ({
             setPassword(event.target.value);
           }}
         ></input>
-        <p style={{ color: "red" }}>{errorMessage}</p>
+        <p className="messageError">{errorMessage}</p>
         <input
           className="buttonSignupLogin"
           type="submit"

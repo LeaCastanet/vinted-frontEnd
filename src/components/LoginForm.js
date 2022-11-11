@@ -26,8 +26,9 @@ const LoginForm = ({
             email: email,
             password: password,
           };
-          try {
-            const fetchData = async () => {
+
+          const fetchData = async () => {
+            try {
               const response = await axios.post(
                 "https://lereacteur-vinted-api.herokuapp.com/user/login",
                 data
@@ -38,12 +39,12 @@ const LoginForm = ({
                 handleToken(token);
                 navigate("/");
               }
-            };
-            fetchData();
-          } catch (error) {
-            console.log(error.message);
-            console.log(error.response.data);
-          }
+            } catch (error) {
+              console.log(error.message);
+              console.log(error.response.data);
+            }
+          };
+          fetchData();
         }}
       >
         <input

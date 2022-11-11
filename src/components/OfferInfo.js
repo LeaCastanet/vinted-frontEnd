@@ -1,4 +1,5 @@
 const OfferInfo = ({ data, setData, id }) => {
+  console.log(data);
   return (
     <div className="offerBody">
       <div className="offerInfo">
@@ -72,10 +73,12 @@ const OfferInfo = ({ data, setData, id }) => {
             <div>
               {data.owner ? (
                 <div className="offerAvatarUsername">
-                  <img
-                    className="imgAvatar"
-                    src={data.owner.account.avatar.secure_url}
-                  ></img>
+                  {data.owner.account.avatar && (
+                    <img
+                      className="imgAvatar"
+                      src={data.owner.account.avatar.secure_url}
+                    />
+                  )}
                   <p>{data.owner.account.username}</p>
                 </div>
               ) : null}
