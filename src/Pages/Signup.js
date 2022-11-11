@@ -5,6 +5,8 @@ const Signup = ({ handleToken, token, setToken }) => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
   return (
     <div>
       <SignupForm
@@ -17,6 +19,8 @@ const Signup = ({ handleToken, token, setToken }) => {
         handleToken={handleToken}
         token={token}
         setToken={setToken}
+        errorMessage={errorMessage}
+        setErrorMessage={setErrorMessage}
       />
     </div>
   );

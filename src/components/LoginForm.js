@@ -10,6 +10,8 @@ const LoginForm = ({
   handleToken,
   token,
   setToken,
+  errorMessage,
+  setErrorMessage,
 }) => {
   const navigate = useNavigate();
 
@@ -24,20 +26,24 @@ const LoginForm = ({
             email: email,
             password: password,
           };
-          const fetchData = async () => {
-            const response = await axios.post(
-              "https://lereacteur-vinted-api.herokuapp.com/user/login",
-              data
-            );
-            console.log(response.data);
-            const token = response.data.token;
-            handleToken(token);
-          };
-          fetchData();
-
-          //   const token = "1234567890";
-
-          navigate("/");
+          try {
+            const fetchData = async () => {
+              const response = await axios.post(
+                "https://lereacteur-vinted-api.herokuapp.com/user/login",
+                data
+              );
+              console.log(response.data);
+              if (response.data.token) {
+                const token = response.data.token;
+                handleToken(token);
+                navigate("/");
+              }
+            };
+            fetchData();
+          } catch (error) {
+            console.log(error.message);
+            console.log(error.response.data);
+          }
         }}
       >
         <input

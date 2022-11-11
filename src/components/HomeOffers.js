@@ -8,12 +8,14 @@ const HomeOffers = ({ data }) => {
         // console.log(offer.owner.account.avatar.url);
         return (
           <div className="homeOffer">
-            <div className="avatarEtUsername">
-              <p className="avatar">avatar</p>
-
-              {/* {offer.owner ? (
-                <img src={offer.owner.account.avatar.url}></img>
-              ) : ""} */}
+            <div className="avatarEtUsernameHome">
+              {offer.owner?.account.avatar && (
+                <img
+                  className="avatarImgHome"
+                  src={offer.owner.account.avatar.url}
+                  style={{ height: 50, width: 50 }}
+                ></img>
+              )}
 
               <div>{offer.owner ? offer.owner.account.username : ""}</div>
             </div>

@@ -3,17 +3,21 @@ const OfferInfo = ({ data, setData, id }) => {
     <div className="offerBody">
       <div className="offerInfo">
         <div className="containerOfferImg">
-          {data.product_pictures.map((images) => {
-            return (
-              <div className="offerImgs">
-                <img
-                  className="offerImg"
-                  key={images.id}
-                  src={images.url}
-                ></img>
-              </div>
-            );
-          })}
+          {data.product_pictures.length <= 0 ? (
+            <img src={data.product_image.url}></img>
+          ) : (
+            data.product_pictures.map((images) => {
+              return (
+                <div className="offerImgs">
+                  <img
+                    className="offerImg"
+                    key={images.id}
+                    src={images.url}
+                  ></img>
+                </div>
+              );
+            })
+          )}
         </div>
 
         <div className="infoOffer">

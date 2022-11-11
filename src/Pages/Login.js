@@ -4,6 +4,7 @@ import LoginForm from "../components/LoginForm";
 const Login = ({ handleToken, token, setToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   return (
     <>
@@ -15,6 +16,8 @@ const Login = ({ handleToken, token, setToken }) => {
         handleToken={handleToken}
         token={token}
         setToken={setToken}
+        errorMessage={errorMessage}
+        setErrorMessage={setErrorMessage}
       />
     </>
   );

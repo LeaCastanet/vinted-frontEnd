@@ -103,16 +103,29 @@ body {
   margin-top: 30px;
 }
 
+.avatarEtUsernameHome {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.avatarImgHome {
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
 .homeOffer {
   margin-bottom: 40px;
   width: calc(100% / 5);
   margin-inline: 20px;
   box-sizing: border-box;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .homeOffer img {

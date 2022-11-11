@@ -12,6 +12,8 @@ const SignupForm = ({
   handleToken,
   token,
   setToken,
+  errorMessage,
+  setErrorMessage,
 }) => {
   const navigate = useNavigate();
   return (
@@ -22,24 +24,35 @@ const SignupForm = ({
         className="containerForm"
         onSubmit={(event) => {
           event.preventDefault();
+          setErrorMessage("");
           const data = {
             username: userName,
             email: email,
             password: password,
           };
-          const fetchData = async () => {
-            const response = await axios.post(
-              `https://lereacteur-vinted-api.herokuapp.com/user/signup`,
-              data
-            );
-            console.log(response.data);
-          };
-          fetchData();
+          try {
+            const fetchData = async () => {
+              const response = await axios.post(
+                `https://lereacteur-vinted-api.herokuapp.com/user/signup`,
+                data
+              );
+              // console.log(response.data);
+              if (response.data.token) {
+                const token = response.data.token;
+                handleToken(token);
+                navigate("/");
+              }
+            };
 
-          //   const token = "1234567890";
-          handleToken(token);
-          // À la fin de cete procédure je suis redirigé vers Home
-          navigate("/");
+            fetchData();
+          } catch (error) {
+            if (error.response?.status === 409) {
+              setErrorMessage("Cet email est déja utilisé");
+            }
+            if (error.response?.data.message === "Missing parameters") {
+              setErrorMessage("Vous devez remplir tous les champs");
+            }
+          }
         }}
       >
         <input
@@ -69,6 +82,7 @@ const SignupForm = ({
             setPassword(event.target.value);
           }}
         ></input>
+        <p style={{ color: "red" }}>{errorMessage}</p>
         <input
           className="buttonSignupLogin"
           type="submit"
