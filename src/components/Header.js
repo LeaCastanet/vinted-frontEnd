@@ -55,18 +55,19 @@ const Header = ({
       </div>
       <div className="AffinerRecherche">
         <input
-          className="inputHeaderPrice"
+          className="inputHeaderPriceMin"
           type="text"
-          placeholder="price min"
+          placeholder="prix minimum"
           value={priceMin}
           onChange={(event) => {
             setPriceMin(event.target.value);
           }}
         ></input>
+
         <input
-          className="inputHeaderPrice"
+          className="inputHeaderPriceMax"
           type="text"
-          placeholder="price max"
+          placeholder="prix maximum"
           value={priceMax}
           onChange={(event) => {
             setPriceMax(event.target.value);
@@ -78,7 +79,7 @@ const Header = ({
             setOrderBy("price-asc");
           }}
         >
-          Trier prix croissant
+          Trier par prix croissant
         </button>
         <button
           className="buttonPrice"
@@ -86,7 +87,7 @@ const Header = ({
             setOrderBy("price-desc");
           }}
         >
-          Trier prix décroissant
+          Trier par prix décroissant
         </button>
       </div>
     </>
