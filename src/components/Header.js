@@ -16,42 +16,52 @@ const Header = ({
   return (
     <>
       <div className="header">
-        <Link to="/">
-          <img className="imgHeader" src={Vinted_logo}></img>
-        </Link>
+        <div className="logoEtInput">
+          <Link to="/">
+            <img className="imgHeader" src={Vinted_logo}></img>
+          </Link>
 
-        <input
-          className="inputHeader"
-          type="search"
-          placeholder="Recherche des articles"
-          value={textSearch}
-          onChange={(event) => {
-            setTextSearch(event.target.value);
-          }}
-        ></input>
-
-        {token ? (
-          <button
-            className="buttonDeconexion"
-            onClick={() => {
-              handleToken(null);
+          <input
+            className="inputHeader"
+            type="search"
+            placeholder="Recherche des articles"
+            value={textSearch}
+            onChange={(event) => {
+              setTextSearch(event.target.value);
             }}
-          >
-            Deconexion
-          </button>
-        ) : (
-          <>
-            <Link to="/signup">
-              <button className="buttonWhite">S'incrire</button>
-            </Link>
+          ></input>
+        </div>
+        <div className="buttonHeader">
+          {token ? (
+            <button
+              className="buttonDeconexion"
+              onClick={() => {
+                handleToken(null);
+              }}
+            >
+              Déconnexion
+            </button>
+          ) : (
+            <>
+              <Link to="/signup">
+                <button className="buttonWhite">S'incrire</button>
+              </Link>
 
+              <Link to="/login">
+                <button className="buttonWhite">Se connecter</button>
+              </Link>
+            </>
+          )}
+          {token ? (
+            <Link to="/publish">
+              <button className="buttonBlue">Vends tes articles</button>
+            </Link>
+          ) : (
             <Link to="/login">
-              <button className="buttonWhite">Se connecter</button>
+              <button className="buttonBlue">Vends tes articles</button>
             </Link>
-          </>
-        )}
-
-        <button className="buttonBlue">Vends tes articles</button>
+          )}
+        </div>
       </div>
       <div className="AffinerRecherche">
         <input

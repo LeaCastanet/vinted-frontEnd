@@ -3,7 +3,14 @@ import { useState, useEffect } from "react";
 import HomeHeader from "../components/HomeHeader";
 import HomeOffers from "../components/HomeOffers";
 
-const Home = ({ textSearch, priceMin, priceMax, orderBy, setOrderBy }) => {
+const Home = ({
+  textSearch,
+  priceMin,
+  priceMax,
+  orderBy,
+  setOrderBy,
+  token,
+}) => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +29,7 @@ const Home = ({ textSearch, priceMin, priceMax, orderBy, setOrderBy }) => {
     <p>En cours de chargement...</p>
   ) : (
     <div className="container">
-      <HomeHeader />
+      <HomeHeader token={token} />
       <HomeOffers data={data} setData={setData} />
     </div>
   );

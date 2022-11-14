@@ -42,9 +42,9 @@ const OfferInfo = ({ data, setData, id }) => {
                     ) : null}
                   </div>
                   <div className="offerDescription">
-                    {info.ETAT ? (
+                    {info.ÉTAT ? (
                       <>
-                        <p>Etat</p> <p>{info.ETAT}</p>
+                        <p>Etat</p> <p>{info.ÉTAT}</p>
                       </>
                     ) : null}
                   </div>

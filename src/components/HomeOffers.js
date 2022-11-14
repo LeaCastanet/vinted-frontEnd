@@ -24,7 +24,7 @@ const HomeOffers = ({ data }) => {
               <img key={index} src={offer.product_image.url}></img>
             </Link>
             <div>
-              <p className="infoSousImgHome">{offer.product_price} €</p>
+              <p className="infoSousImgHomePrice">{offer.product_price} €</p>
               {offer.product_details.map((detail, index) => {
                 if (detail.TAILLE) {
                   return (

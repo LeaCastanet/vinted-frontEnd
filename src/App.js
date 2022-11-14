@@ -6,6 +6,8 @@ import Offer from "./Pages/Offer";
 import Header from "./components/Header";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import Publish from "./Pages/Publish";
+import Footer from "./components/Footer";
 
 import "./App.css";
 
@@ -57,6 +59,7 @@ const App = () => {
               setPriceMax={setPriceMax}
               orderBy={orderBy}
               setOrderBy={setOrderBy}
+              token={token}
             />
           }
         ></Route>
@@ -81,7 +84,9 @@ const App = () => {
             />
           }
         ></Route>
+        <Route path="/publish" element={<Publish token={token} />}></Route>
       </Routes>
+      <Footer />
     </Router>
   );
 };

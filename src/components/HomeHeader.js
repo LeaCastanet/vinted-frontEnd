@@ -1,13 +1,26 @@
 import imgHomeVinted from "../images/imgHomeVinted.jpg";
+import { Link } from "react-router-dom";
 
-const HomeHeader = () => {
+const HomeHeader = ({ token }) => {
   return (
     <div className="homeHeader">
-      <img src={imgHomeVinted}></img>
+      <div className="homeImg">
+        <img src={imgHomeVinted}></img>
+        <div className="dechirure"></div>
+      </div>
+
       <div className="containerBlock">
         <div className="blockSurImg">
           <p>Prêts à faire du tri dans vos placards?</p>
-          <button className="buttonBlue">Commencer à vendre</button>
+          {token ? (
+            <Link to="/publish">
+              <button className="buttonBlue">Commencer à vendre</button>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="buttonBlue">Commencer à vendre</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
