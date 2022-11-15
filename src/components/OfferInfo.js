@@ -1,4 +1,6 @@
-const OfferInfo = ({ data, setData, id }) => {
+import { Link } from "react-router-dom";
+
+const OfferInfo = ({ data, setData, id, token }) => {
   console.log(data);
   return (
     <div className="offerBody">
@@ -85,7 +87,22 @@ const OfferInfo = ({ data, setData, id }) => {
             </div>
           </div>
           <div className="containerButtonAcheter">
-            <button className="buttonAcheter">Acheter</button>
+            {token ? (
+              <Link
+                to="/payment"
+                state={{
+                  title: data.product_name,
+                  price: data.product_price,
+                  _id: data.owner.account._id,
+                }}
+              >
+                <button className="buttonAcheter">Acheter</button>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <button className="buttonAcheter">Acheter</button>
+              </Link>
+            )}
           </div>
         </div>
       </div>

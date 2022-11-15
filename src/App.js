@@ -1,15 +1,15 @@
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import Cookies from "js-cookie";
+
 import Home from "./Pages/Home";
 import Offer from "./Pages/Offer";
 import Header from "./components/Header";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Publish from "./Pages/Publish";
-import Footer from "./components/Footer";
-
-import "./App.css";
+import Payment from "./Pages/Payment";
 
 const App = () => {
   // State dans lequel je stocke le token. Sa valeur de base sera :
@@ -63,7 +63,7 @@ const App = () => {
             />
           }
         ></Route>
-        <Route path="/offer/:id" element={<Offer />}></Route>
+        <Route path="/offer/:id" element={<Offer token={token} />}></Route>
         <Route
           path="/signup"
           element={
@@ -85,8 +85,8 @@ const App = () => {
           }
         ></Route>
         <Route path="/publish" element={<Publish token={token} />}></Route>
+        <Route path="/payment" element={<Payment token={token} />}></Route>
       </Routes>
-      <Footer />
     </Router>
   );
 };

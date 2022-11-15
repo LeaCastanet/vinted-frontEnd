@@ -319,6 +319,7 @@ body {
   color: white;
   height: 35px;
   width: 100%;
+  cursor: pointer;
 }
 
 .containerButtonAcheter {
