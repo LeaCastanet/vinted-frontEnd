@@ -1,5 +1,6 @@
 import { useState } from "react";
 import PublishForm from "../components/PublishForm";
+import { Navigate } from "react-router-dom";
 
 const Publish = ({ token }) => {
   const [title, setTitle] = useState("");
@@ -12,7 +13,7 @@ const Publish = ({ token }) => {
   const [color, setColor] = useState("");
   const [picture, setPicture] = useState();
 
-  return (
+  return token ? (
     <div>
       <PublishForm
         title={title}
@@ -36,6 +37,8 @@ const Publish = ({ token }) => {
         token={token}
       />
     </div>
+  ) : (
+    <Navigate to="/login" />
   );
 };
 
