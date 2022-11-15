@@ -241,7 +241,7 @@ body {
 
 .offerBody {
   background-color: #f2f2f2;
-  height: 100vh;
+  height: 110vh;
 }
 
 .offerInfo {
@@ -250,6 +250,7 @@ body {
   max-width: 1280px;
   justify-content: space-around;
   padding-top: 30px;
+  padding-bottom: 30px;
   height: 700px;
 }
 
@@ -642,7 +643,13 @@ span {
     padding: 15% 2%;
   }
 
-  .buttonPrice {
+  .unactivited {
+    height: 50px;
+    width: 100px;
+    margin-left: 10px;
+  }
+
+  .activited {
     height: 50px;
     width: 100px;
     margin-left: 10px;
