@@ -17,35 +17,37 @@ const CheckoutForm = ({ _id, title, price }) => {
       const stripeResponse = await stripe.createToken(cardElement, {
         name: _id,
       });
+      //   console.log(stripeResponse);
       const stripeToken = stripeResponse.token.id;
+      //   console.log(stripeToken);
 
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/payment",
-        { stripeToken: stripeToken, title: title, amount: price }
+        { token: stripeToken, title: title, amount: price }
       );
       console.log("response :", response);
 
-      if (response.data === "succeeded") {
+      if (response.data.status === "succeeded") {
         setIsLoading(false);
         setCompleted(true);
       } else {
         alert("Une erreur est survenue");
       }
-      console.log(response.data);
     } catch (error) {
+      console.log("catch>>", error.response);
       console.log(error.message);
     }
   };
 
   return (
-    <form onSubmit={handleAcheter}>
+    <form className="inputCarte" onSubmit={handleAcheter}>
       <CardElement />
       {isLoading ? (
         <p>Loading...</p>
       ) : completed ? (
         <p>Paiement effectué</p>
       ) : (
-        <input type="submit"></input>
+        <input className="buttonAcheter" type="submit" value="Acheter"></input>
       )}
     </form>
   );

@@ -14,33 +14,49 @@ const Payment = ({ token }) => {
   const { price } = location.state;
   const { _id } = location.state;
 
-  return token ? (
-    <div>
-      <div className="infoProduitAchat">
-        <p>Resumé de la commande</p>
-        {/* <p>{title}</p> */}
-        <p>Commande</p>
-        <p>{price} €</p>
-        <p>Frais de protection acheteur</p>
-        <p>0,40 €</p>
-        <p>Frais de port</p>
-        <p>0,80 €</p>
-      </div>
-      <div>
-        <p>Total</p>
-        <p>Montant total</p>
-      </div>
-      <div>
-        <p>
-          Il ne vous reste plus qu'une étape pour vous offrir {title}. Vous
-          allez payer "montant total" (frais de protection et frais de port
-          inclus).
-        </p>
-      </div>
+  const fraisProtectionAchat = Number(0.4);
+  const fraisPort = Number(0.8);
+  let total = fraisPort + fraisProtectionAchat + price;
+  let totalFinal = total.toFixed(2);
 
-      <Elements stripe={stripePromise}>
-        <CheckoutForm _id={_id} title={title} price={price} />
-      </Elements>
+  return token ? (
+    <div className="paymentBody">
+      <div className="paymentContainer">
+        {/* <PaymentForm title={title} price={price} /> */}
+        <div className="paymentForm">
+          <p className="titleCommande">Resumé de la commande</p>
+          <div className="infoProduitAchat">
+            <div className="ligneProduitAchat">
+              <p>Commande</p>
+              <p>{price} €</p>
+            </div>
+            <div className="ligneProduitAchat">
+              <p>Frais de protection acheteur</p>
+              <p>{fraisProtectionAchat} €</p>
+            </div>
+            <div className="ligneProduitAchatFin">
+              <p>Frais de port</p>
+              <p>{fraisPort} €</p>
+            </div>
+          </div>
+          <div className="infoTotal">
+            <p>Total</p>
+            <p>{totalFinal} €</p>
+          </div>
+          <div className="phraseAchat">
+            <p>
+              Il ne vous reste plus qu'une étape pour vous offrir
+              <span>{title}</span> . Vous allez payer{" "}
+              <span>{totalFinal} € </span>
+              (frais de protection et frais de port inclus).
+            </p>
+          </div>
+        </div>
+
+        <Elements stripe={stripePromise}>
+          <CheckoutForm _id={_id} title={title} price={totalFinal} />
+        </Elements>
+      </div>
     </div>
   ) : (
     <Navigate to="/login" />

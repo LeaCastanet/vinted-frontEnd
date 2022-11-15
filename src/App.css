@@ -44,14 +44,14 @@ body {
 .AffinerRecherche {
   margin-bottom: 10px;
   display: flex;
-  max-width: 920px;
+  max-width: 960px;
   height: 52px;
   padding: 0px 50px;
   margin: 0 auto;
 }
 
 .inputHeaderPriceMin {
-  width: 100px;
+  width: 60px;
   height: 35px;
   background-color: rgb(234, 234, 234);
   border: none;
@@ -60,7 +60,7 @@ body {
 }
 
 .inputHeaderPriceMax {
-  width: 100px;
+  width: 60px;
   height: 35px;
   background-color: rgb(234, 234, 234);
   border: none;
@@ -79,7 +79,18 @@ body {
   margin-right: 20px;
 }
 
-.buttonPrice {
+.activited {
+  background-color: #2aaeb7;
+  border: #2aaeb7 solid 1px;
+  border-radius: 5px;
+  color: white;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+.unactivited {
   border: #2aaeb7 solid 1px;
   color: #2aaeb7;
   border-radius: 5px;
@@ -239,6 +250,7 @@ body {
   max-width: 1280px;
   justify-content: space-around;
   padding-top: 30px;
+  height: 700px;
 }
 
 .infoOffer {
@@ -247,7 +259,6 @@ body {
   justify-content: center;
   background-color: white;
   padding: 40px;
-  height: 500px;
   width: 400px;
 }
 
@@ -261,7 +272,6 @@ body {
   flex: wrap;
   overflow: hidden;
   overflow-x: scroll;
-  height: 580px;
   width: 400px;
 }
 
@@ -475,6 +485,62 @@ span {
   font-weight: bold;
 }
 
+.paymentBody {
+  background-color: #f2f2f2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.paymentContainer {
+  background-color: white;
+  width: 500px;
+  padding: 20px;
+  height: 600px;
+}
+
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleCommande {
+  padding-top: 10px;
+  padding-bottom: 50px;
+  color: #999999;
+}
+
+.ligneProduitAchat {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.ligneProduitAchatFin {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  border-bottom: #8e8e8e 1px solid;
+}
+
+.infoTotal {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  font-weight: bold;
+}
+
+.phraseAchat {
+  padding-bottom: 30px;
+  border-bottom: #8e8e8e 1px solid;
+}
+
+.inputCarte {
+  padding-top: 20px;
+}
+
 @media (max-width: 1245px) {
   .header {
     max-width: 100%;
@@ -593,7 +659,6 @@ span {
   }
 
   .inputHeaderPriceMin {
-    width: 85px;
     height: 35px;
     background-color: rgb(234, 234, 234);
     border: none;
@@ -602,7 +667,6 @@ span {
   }
 
   .inputHeaderPriceMax {
-    width: 85px;
     height: 35px;
     background-color: rgb(234, 234, 234);
     border: none;
