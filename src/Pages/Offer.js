@@ -21,7 +21,9 @@ const Offer = ({ token }) => {
   }, []);
 
   return isLoading ? (
-    <p>En cours de chargement...</p>
+    <div className="loaderContainer">
+      <div className="loader"></div>
+    </div>
   ) : (
     <div className="container">
       <OfferInfo data={data} setData={setData} token={token} />

@@ -20,6 +20,7 @@ const App = () => {
   const [priceMin, setPriceMin] = useState("");
   const [priceMax, setPriceMax] = useState("");
   const [orderBy, setOrderBy] = useState("price-asc");
+  const [page, setPage] = useState(1);
 
   // je stoke le token dans le state et dans les cookies ou supprimer le token dans le state et dans les cookies.
   const handleToken = (token) => {
@@ -60,6 +61,8 @@ const App = () => {
               orderBy={orderBy}
               setOrderBy={setOrderBy}
               token={token}
+              page={page}
+              setPage={setPage}
             />
           }
         ></Route>

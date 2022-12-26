@@ -7,7 +7,7 @@ const OfferInfo = ({ data, setData, id, token }) => {
       <div className="offerInfo">
         <div className="containerOfferImg">
           {data.product_pictures.length <= 0 ? (
-            <img src={data.product_image.url}></img>
+            <img src={data.product_image.url} className="offerImgFixe"></img>
           ) : (
             data.product_pictures.map((images) => {
               return (

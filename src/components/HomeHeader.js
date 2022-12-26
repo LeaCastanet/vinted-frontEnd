@@ -6,7 +6,6 @@ const HomeHeader = ({ token }) => {
     <div className="homeHeader">
       <div className="homeImg">
         <img src={imgHomeVinted}></img>
-        <div className="dechirure"></div>
       </div>
 
       <div className="containerBlock">

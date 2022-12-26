@@ -133,18 +133,6 @@ body {
   position: absolute;
 }
 
-/* .dechirure {
-  background-image: url(/Users/lea/LeReacteur/React/Jours8/exercice/vinted-frontend/my-app/src/images/imgDechirure.svg);
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-position: bottom -10px right -1px;
-  background-repeat: no-repeat;
-  background-size: contain;
-} */
-
 .containerBlock {
   position: relative;
   padding: 7% 2%;
@@ -177,6 +165,27 @@ body {
   max-width: 1280px;
   margin-top: 30px;
   justify-content: center;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.buttonPage {
+  background-color: #2aaeb7;
+  border: #2aaeb7 solid 1px;
+  border-radius: 5px;
+  color: white;
+  height: 25px;
+  cursor: pointer;
+}
+
+.pageNumber {
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .avatarEtUsernameHome {
@@ -276,15 +285,20 @@ body {
   width: 400px;
 }
 
+.offerImgFixe {
+  overflow: hidden;
+  object-fit: cover;
+}
+
 .offerImgs {
-  display: flex;
-  flex: wrap;
+  height: 100%;
+  width: 400px;
 }
 
 .offerImg {
+  object-fit: cover;
   height: 100%;
   width: 400px;
-  object-fit: cover;
 }
 
 .price {
@@ -540,6 +554,35 @@ span {
 
 .inputCarte {
   padding-top: 20px;
+}
+
+/* custom loader */
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 150px;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: #2aaeb7;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 1245px) {

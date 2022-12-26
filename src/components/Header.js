@@ -17,7 +17,7 @@ const Header = ({
     <>
       <div className="header">
         <div className="logoEtInput">
-          <Link to="/">
+          <Link to="/" onClick="history.go(0)">
             <img className="imgHeader" src={Vinted_logo}></img>
           </Link>
 
