@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Cookies from "js-cookie";
 
@@ -40,12 +40,6 @@ const App = () => {
         handleToken={handleToken}
         textSearch={textSearch}
         setTextSearch={setTextSearch}
-        priceMin={priceMin}
-        setPriceMin={setPriceMin}
-        priceMax={priceMax}
-        setPriceMax={setPriceMax}
-        orderBy={orderBy}
-        setOrderBy={setOrderBy}
       />
       <Routes>
         <Route
@@ -63,6 +57,7 @@ const App = () => {
               token={token}
               page={page}
               setPage={setPage}
+              handleToken={handleToken}
             />
           }
         ></Route>

@@ -1,7 +1,19 @@
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
-const HomeOffers = ({ data, page, setPage }) => {
+import AffinerRecherche from "./AffinerRecherche";
+
+const HomeOffers = ({
+  data,
+  page,
+  setPage,
+  priceMin,
+  setPriceMin,
+  priceMax,
+  setPriceMax,
+  orderBy,
+  setOrderBy,
+}) => {
   const ref = useRef(null);
 
   const handleClick = () => {
@@ -10,7 +22,17 @@ const HomeOffers = ({ data, page, setPage }) => {
 
   return (
     <>
-      <div className="homeOffers" ref={ref}>
+      <div ref={ref}>
+        <AffinerRecherche
+          priceMin={priceMin}
+          setPriceMin={setPriceMin}
+          priceMax={priceMax}
+          setPriceMax={setPriceMax}
+          orderBy={orderBy}
+          setOrderBy={setOrderBy}
+        />
+      </div>
+      <div className="homeOffers">
         {data.offers.map((offer, index) => {
           const id = offer._id;
           // console.log(offer.owner.account.avatar.url);

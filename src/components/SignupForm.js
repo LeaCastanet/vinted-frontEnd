@@ -47,7 +47,7 @@ const SignupForm = ({
                 setErrorMessage("Cet email est déja utilisé");
               }
               if (error.response?.data.message === "Missing parameters") {
-                setErrorMessage("Vous devez remplir tous les champs");
+                setErrorMessage("Merci de remplir tous les champs");
               }
             }
           };

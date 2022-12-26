@@ -40,16 +40,24 @@ const CheckoutForm = ({ _id, title, price }) => {
   };
 
   return (
-    <form className="inputCarte" onSubmit={handleAcheter}>
-      <CardElement />
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : completed ? (
-        <p>Paiement effectué</p>
-      ) : (
-        <input className="buttonAcheter" type="submit" value="Acheter"></input>
-      )}
-    </form>
+    <>
+      <form className="inputCarte" onSubmit={handleAcheter}>
+        <CardElement />
+        {isLoading ? (
+          <div className="loaderContainerPayment">
+            <div className="loaderPayment"></div>
+          </div>
+        ) : completed ? (
+          <p className="textPayment">Paiement effectué</p>
+        ) : (
+          <input
+            className="buttonAcheter"
+            type="submit"
+            value="Acheter"
+          ></input>
+        )}
+      </form>
+    </>
   );
 };
 

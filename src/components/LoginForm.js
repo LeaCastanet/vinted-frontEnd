@@ -14,6 +14,7 @@ const LoginForm = ({
   setErrorMessage,
 }) => {
   const navigate = useNavigate();
+  // console.log(errorMessage);
 
   return (
     <div className="containerLogin">
@@ -29,19 +30,29 @@ const LoginForm = ({
 
           const fetchData = async () => {
             try {
-              const response = await axios.post(
-                "https://lereacteur-vinted-api.herokuapp.com/user/login",
-                data
-              );
-              console.log(response.data);
-              if (response.data.token) {
-                const token = response.data.token;
-                handleToken(token);
-                navigate("/");
+              if (email || password) {
+                const response = await axios.post(
+                  "https://lereacteur-vinted-api.herokuapp.com/user/login",
+                  data
+                );
+                // console.log(response.data);
+                if (response.data.token) {
+                  const token = response.data.token;
+                  handleToken(token);
+                  navigate("/");
+                }
+              } else {
+                setErrorMessage("Merci de remplir tous les champs");
               }
             } catch (error) {
-              console.log(error.message);
-              console.log(error.response.data);
+              if (error.response.status === 400) {
+                setErrorMessage("Email ou mot de passe incorect");
+              } else if (error.response.status === 401) {
+                setErrorMessage("Email ou mot de passe incorect");
+              }
+              // console.log(error.message);
+              // console.log(error.response.data);
+              // console.log(errorMessage);
             }
           };
           fetchData();
@@ -65,6 +76,7 @@ const LoginForm = ({
             setPassword(event.target.value);
           }}
         ></input>
+        <p className="messageError">{errorMessage}</p>
         <input
           className="buttonSignupLogin"
           type="submit"

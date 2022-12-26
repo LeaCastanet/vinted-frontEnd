@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
 import LoginForm from "../components/LoginForm";
 
 const Login = ({ handleToken, token, setToken }) => {

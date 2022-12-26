@@ -14,6 +14,8 @@ const Payment = ({ token }) => {
   const { price } = location.state;
   const { _id } = location.state;
 
+  console.log(title);
+
   const fraisProtectionAchat = Number(0.4);
   const fraisPort = Number(0.8);
   let total = fraisPort + fraisProtectionAchat + price;
@@ -46,7 +48,7 @@ const Payment = ({ token }) => {
           <div className="phraseAchat">
             <p>
               Il ne vous reste plus qu'une étape pour vous offrir
-              <span>{title}</span> . Vous allez payer{" "}
+              <span> {title}</span>. Vous allez payer{" "}
               <span>{totalFinal} € </span>
               (frais de protection et frais de port inclus).
             </p>
