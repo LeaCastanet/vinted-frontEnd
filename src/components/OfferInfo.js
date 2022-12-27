@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const OfferInfo = ({ data, setData, id, token }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div className="offerBody">
       <div className="offerInfo">
@@ -14,7 +14,7 @@ const OfferInfo = ({ data, setData, id, token }) => {
                 <div className="offerImgs">
                   <img
                     className="offerImg"
-                    key={images.id}
+                    key={images.version_id}
                     src={images.url}
                   ></img>
                 </div>
@@ -26,42 +26,42 @@ const OfferInfo = ({ data, setData, id, token }) => {
         <div className="infoOffer">
           <p className="price">{data.product_price} €</p>
           <div className="containerOfferDescription">
-            {data.product_details.map((info) => {
+            {data.product_details.map((info, index) => {
               return (
                 <div>
                   <div className="offerDescription">
                     {info.MARQUE ? (
-                      <>
+                      <div key={index}>
                         <p>Marque</p> <p>{info.MARQUE}</p>
-                      </>
+                      </div>
                     ) : null}
                   </div>
                   <div className="offerDescription">
                     {info.TAILLE ? (
-                      <>
+                      <div key={index}>
                         <p>Taille</p> <p>{info.TAILLE}</p>
-                      </>
+                      </div>
                     ) : null}
                   </div>
                   <div className="offerDescription">
                     {info.ÉTAT ? (
-                      <>
+                      <div key={index}>
                         <p>Etat</p> <p>{info.ÉTAT}</p>
-                      </>
+                      </div>
                     ) : null}
                   </div>
                   <div className="offerDescription">
                     {info.COULEUR ? (
-                      <>
+                      <div key={index}>
                         <p>Couleur</p> <p>{info.COULEUR}</p>
-                      </>
+                      </div>
                     ) : null}
                   </div>
                   <div className="offerDescription">
                     {info.EMPLACEMENT ? (
-                      <>
+                      <div key={index}>
                         <p>Emplacement</p> <p>{info.EMPLACEMENT}</p>
-                      </>
+                      </div>
                     ) : null}
                   </div>
                 </div>
@@ -79,6 +79,7 @@ const OfferInfo = ({ data, setData, id, token }) => {
                     <img
                       className="imgAvatar"
                       src={data.owner.account.avatar.secure_url}
+                      key={data.owner._id}
                     />
                   )}
                   <p>{data.owner.account.username}</p>

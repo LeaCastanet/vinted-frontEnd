@@ -33,12 +33,12 @@ const HomeOffers = ({
         />
       </div>
       <div className="homeOffers">
-        {data.offers.map((offer, index) => {
+        {data.offers.map((offer) => {
           const id = offer._id;
-          // console.log(offer.owner.account.avatar.url);
+          // console.log(data.offers);
           return (
             <div className="homeOffer">
-              <div className="avatarEtUsernameHome">
+              <div className="avatarEtUsernameHome" key={offer.owner._id}>
                 {offer.owner?.account.avatar && (
                   <img
                     className="avatarImgHome"
@@ -51,11 +51,12 @@ const HomeOffers = ({
               </div>
 
               <Link to={`/offer/${id}`}>
-                <img key={index} src={offer.product_image.url}></img>
+                <img key={offer._id} src={offer.product_image.url}></img>
               </Link>
               <div>
                 <p className="infoSousImgHomePrice">{offer.product_price} €</p>
                 {offer.product_details.map((detail, index) => {
+                  // console.log(offer.product_details);
                   if (detail.TAILLE) {
                     return (
                       <p className="infoSousImgHome" key={index}>
@@ -66,13 +67,9 @@ const HomeOffers = ({
                     return null;
                   }
                 })}
-                {offer.product_details.map((detail, index) => {
+                {offer.product_details.map((detail) => {
                   if (detail.MARQUE) {
-                    return (
-                      <p className="infoSousImgHome" key={index}>
-                        {detail.MARQUE}
-                      </p>
-                    );
+                    return <p className="infoSousImgHome">{detail.MARQUE}</p>;
                   } else {
                     return null;
                   }
