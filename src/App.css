@@ -717,47 +717,6 @@ span {
     height: 630px;
     margin-bottom: 20px;
   }
-
-  .publishFormContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    background-color: white;
-    width: 430px;
-    height: 600px;
-    padding: 20px;
-  }
-
-  .publishDescription {
-    display: flex;
-    justify-content: space-between;
-    width: 430px;
-    border-bottom: solid 1px #dfe0e2;
-    padding: 10px;
-  }
-
-  .publishInput {
-    border: none;
-    width: 250px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .publishInputDescription {
-    border: none;
-    height: 50px;
-    width: 250px;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-
-  .publishDescriptionPrix {
-    display: flex;
-    justify-content: space-between;
-    width: 430px;
-    padding: 10px;
-  }
 }
 
 @media (max-width: 745px) {
@@ -821,6 +780,47 @@ span {
 
   .AffinerRecherche {
     margin-bottom: 10px;
+  }
+
+  .publishFormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background-color: white;
+    width: 430px;
+    height: 600px;
+    padding: 20px;
+  }
+
+  .publishDescription {
+    display: flex;
+    justify-content: space-between;
+    width: 430px;
+    border-bottom: solid 1px #dfe0e2;
+    padding: 10px;
+  }
+
+  .publishInput {
+    border: none;
+    width: 250px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .publishInputDescription {
+    border: none;
+    height: 50px;
+    width: 250px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .publishDescriptionPrix {
+    display: flex;
+    justify-content: space-between;
+    width: 430px;
+    padding: 10px;
   }
 
   .paymentContainer {
@@ -962,5 +962,110 @@ span {
     width: 100px;
     cursor: pointer;
     margin-left: 10px;
+  }
+
+  .offerInfo {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+  }
+
+  .infoOffer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    padding: 40px;
+    width: 270px;
+  }
+
+  .containerOfferImg {
+    display: flex;
+    flex: wrap;
+    overflow: hidden;
+    overflow-x: scroll;
+    width: 350px;
+    height: 630px;
+    margin-bottom: 20px;
+  }
+
+  .offerImgs {
+    height: 630px;
+    width: 350px;
+  }
+
+  .offerImg {
+    object-fit: cover;
+    height: 100%;
+    width: 350px;
+  }
+
+  .publishFormBody {
+    background-color: #f2f2f2;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .publishFormContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    width: 310px;
+    padding: 20px;
+    height: 100%;
+  }
+
+  .publishDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 310px;
+    border-bottom: solid 1px #dfe0e2;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .publishInput {
+    border: none;
+    width: 310px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .publishInputDescription {
+    border: none;
+    height: 50px;
+    width: 310px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .publishDescriptionPrix {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 310px;
+    padding: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .paymentContainer {
+    background-color: white;
+    width: 310px;
+    padding: 20px;
+    height: 600px;
   }
 }
