@@ -35,10 +35,10 @@ const HomeOffers = ({
       <div className="homeOffers">
         {data.offers.map((offer) => {
           const id = offer._id;
-          // console.log(data.offers);
+          // console.log(offer._id);
           return (
             <div className="homeOffer">
-              <div className="avatarEtUsernameHome" key={offer.owner._id}>
+              <div className="avatarEtUsernameHome">
                 {offer.owner?.account.avatar && (
                   <img
                     className="avatarImgHome"
